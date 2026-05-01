@@ -1,0 +1,136 @@
+*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins}
+
+body{
+background: radial-gradient(circle at top, #1a1a1a, #000);
+color:#fff;
+transition:0.4s;
+}
+
+/* INTRO */
+#intro{
+position:fixed;inset:0;background:black;
+display:flex;align-items:center;justify-content:center;
+z-index:9999;
+}
+#text{
+font-size:clamp(20px,4vw,36px);
+opacity:0;transition:1s;filter:blur(10px);
+text-align:center;
+max-width:600px;
+}
+.show{opacity:1;filter:blur(0)}
+#skip{position:absolute;top:20px;right:20px;cursor:pointer}
+
+/* LOGIN */
+#login{
+position:fixed;inset:0;background:#000;
+display:flex;flex-direction:column;
+align-items:center;justify-content:center;
+z-index:999;
+}
+
+/* USER */
+#userTag{
+position:fixed;
+top:10px;
+right:10px;
+background:#ff4d4d;
+padding:6px 10px;
+border-radius:10px;
+}
+
+/* HERO */
+header{
+background:url('cover.jpg') center/cover no-repeat;
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+.overlay{
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(10px);
+padding:20px;
+border-radius:20px;
+text-align:center;
+}
+h1{font-size:clamp(28px,6vw,60px)}
+
+/* GALLERY */
+.gallery{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:10px;
+padding:20px;
+}
+.gallery img{
+width:100%;
+border-radius:12px;
+cursor:pointer;
+transition:0.4s;
+}
+.gallery img:hover{
+transform:scale(1.07);
+filter:brightness(1.2);
+}
+@media(max-width:768px){
+.gallery{grid-template-columns:repeat(2,1fr)}
+}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(40px);transition:1s}
+.reveal.show{opacity:1;transform:translateY(0)}
+
+/* LIGHTBOX */
+#lightbox{
+position:fixed;
+inset:0;
+background:rgba(0,0,0,0.9);
+display:none;
+align-items:center;
+justify-content:center;
+z-index:99999;
+}
+#lightbox img{max-width:90%;max-height:90%}
+#close{
+position:absolute;
+top:20px;right:30px;
+font-size:30px;
+cursor:pointer;
+}
+
+/* GUESTBOOK */
+.guestbook{text-align:center;padding:30px}
+textarea{width:80%;max-width:400px;height:80px}
+
+/* BUTTON */
+button{
+padding:10px 20px;
+border:none;
+border-radius:10px;
+background:linear-gradient(45deg,#ff4d4d,#ff7a7a);
+color:white;
+cursor:pointer;
+}
+
+/* MUSIC */
+.music{
+position:fixed;
+bottom:20px;right:20px;
+background:#ff4d4d;
+width:60px;height:60px;
+border-radius:50%;
+display:flex;align-items:center;justify-content:center;
+cursor:pointer;
+box-shadow:0 0 20px rgba(255,77,77,0.6);
+}
+.spin{animation:spin 3s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* FLOWER */
+.flower{
+position:fixed;
+top:-10px;
+animation:fall linear infinite;
+}
+@keyframes fall{to{transform:translateY(100vh)}}
